@@ -6,7 +6,7 @@
                 <meta content="width=device-width, initial-scale=1" name="viewport">
                 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	                    <title>
-	                        {{ config('app.name') }}
+	                        {{ config('app.name') }}	
 	                    </title>
                     <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
                     <link href="/css/style.css" rel="stylesheet" type="text/css"> </link>
