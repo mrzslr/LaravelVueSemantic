@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'vazir';
+    src: url('../fonts/vazir.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/vazir.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../fonts/vazir.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/vazir.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('../fonts/vazir.ttf') format('truetype');
+    /* Safari, Android, iOS */
+}
+
+html * {
+    font-family: vazir;
+}
+
+
+.ui.cards>.card>.content>.header:not(.ui) {
+    font-family: vazir;
+    direction: rtl;
+}
+.ui.fluid.input>input {
+    font-family: vazir;
+    text-align: right;
+}
+.ui.horizontal.divider {
+     font-family: vazir;
+}
+.ui.buttons:not(.basic):not(.inverted)>.button, .ui.buttons>.ui.button:not(.basic):not(.inverted) {
+font-family: vazir;
+}
+h1,h2,h2,h3,h4,h5,h6{
+font-family: vazir;
+}
+.ui.form input[type=text]{
+    font-family: vazir !important; 
+}
+.ui.inverted.blue.button, .ui.inverted.blue.buttons .button{
+    font-family: vazir;
+}
+.ui.black.button, .ui.black.buttons .button {
+    font-family: vazir;
+}
+.ui.form input:not([type]), .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=email], .ui.form input[type=file], .ui.form input[type=number], .ui.form input[type=password], .ui.form input[type=search], .ui.form input[type=tel], .ui.form input[type=text], .ui.form input[type=time], .ui.form input[type=url] {
+text-align: right;
+font-family: vazir;
+}
+textarea{
+text-align: right;
+font-family: vazir;
+}
+.ui.form textarea:not([rows]){
+    font-family: vazir;
+}
+.ui.search.dropdown.active>input.search, .ui.search.dropdown.visible>input.search {
+    font-family: vazir;
+}
+.ui.dropdown .menu .selected.item, .ui.dropdown.selected {
+    text-align: right;
+}
+.ui.selection.dropdown .menu>.item {
+    text-align: right;
+}
+.ui.form select {
+    font-family: vazir;
+}
+.ui.primary.button {
+    font-family: vazir;
+}
