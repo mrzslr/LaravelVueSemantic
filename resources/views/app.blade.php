@@ -24,6 +24,4 @@
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
     <link href="{{ asset('css/semantic.min.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ asset('js/semantic.min.js') }}"></script>
-   
- 
 </html>
