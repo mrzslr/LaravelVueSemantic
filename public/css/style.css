@@ -19,7 +19,7 @@ html * {
 
 .ui.cards>.card>.content>.header:not(.ui) {
     font-family: vazir;
-    direction: rtl;
+    
 }
 .ui.fluid.input>input {
     font-family: vazir;

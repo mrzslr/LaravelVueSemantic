@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Movie;
+use App\Model\Movie;
 use Illuminate\Http\Request;
-
+use Response;
+use App\User;
 class MovieController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private $movie;
+
+    public function __construct(Movie $movie){
+        $this->movie=$movie;
+    }
     public function index()
     {
-        //
+        $movies=$this->movie->all();
+        return Response::json([
+                'movies'=>$movies,
+            ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +39,7 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -46,7 +50,7 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +61,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        
     }
 
     /**
