@@ -11,7 +11,7 @@
     url('../fonts/vazir.ttf') format('truetype');
     /* Safari, Android, iOS */
 }
-
+/*
 html * {
     font-family: vazir;
 }
@@ -44,7 +44,7 @@ font-family: vazir;
     font-family: vazir;
 }
 .ui.form input:not([type]), .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=email], .ui.form input[type=file], .ui.form input[type=number], .ui.form input[type=password], .ui.form input[type=search], .ui.form input[type=tel], .ui.form input[type=text], .ui.form input[type=time], .ui.form input[type=url] {
-text-align: right;
+
 font-family: vazir;
 }
 textarea{
@@ -55,6 +55,7 @@ font-family: vazir;
     font-family: vazir;
 }
 .ui.search.dropdown.active>input.search, .ui.search.dropdown.visible>input.search {
+    
     font-family: vazir;
 }
 .ui.dropdown .menu .selected.item, .ui.dropdown.selected {
@@ -69,3 +70,4 @@ font-family: vazir;
 .ui.primary.button {
     font-family: vazir;
 }
+*/

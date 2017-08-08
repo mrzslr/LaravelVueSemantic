@@ -1,18 +1,15 @@
 <template>
 <div>
   
-        <div class="ui top fixed menu" dir="rtl">
+<!--         <div class="ui top fixed menu" dir="ltr">
   <router-link to="/">
   <div class="item">
     <i class="home large icon"></i>
   </div>
   </router-link>
-<router-link to="/" class="item">لینک 1</router-link>
-<router-link to="/" class="item">لینک 2</router-link>
-</div>
-<br />
-<br />
-<br />
+<router-link to="/" class="item">Series</router-link>
+<router-link to="/" class="item">Trailers</router-link>
+</div> -->
 <br />
 <div class="ui container">
         <router-view></router-view>
