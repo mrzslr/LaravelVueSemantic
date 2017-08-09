@@ -27,7 +27,9 @@
 	        <img class="ui medium image" style="height:350px;" :src="`${movie.cover}`">
 	      </div>
 	      <div class="content">
-	        <a class="header">{{movie.title}}</a>
+	      <router-link class="header"  :to="`/movie/${movie.id}`">
+	        {{movie.title}}
+	        </router-link>
 	        <div class="meta">
       <span class="date">{{movie.year}}</span>
     </div>

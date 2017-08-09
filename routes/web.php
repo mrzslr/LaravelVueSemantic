@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('app');
-});
 Route::resource('movies','MovieController');
+
+Route::get('/{any}', function () {
+    return view('app');
+})->where(['any' => '.*']);

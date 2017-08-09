@@ -11192,6 +11192,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -12367,13 +12369,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     })]), _vm._v(" "), _c('div', {
       staticClass: "content"
-    }, [_c('a', {
-      staticClass: "header"
-    }, [_vm._v(_vm._s(movie.title))]), _vm._v(" "), _c('div', {
+    }, [_c('router-link', {
+      staticClass: "header",
+      attrs: {
+        "to": ("/movie/" + (movie.id))
+      }
+    }, [_vm._v("\n\t        " + _vm._s(movie.title) + "\n\t        ")]), _vm._v(" "), _c('div', {
       staticClass: "meta"
     }, [_c('span', {
       staticClass: "date"
-    }, [_vm._v(_vm._s(movie.year))])])]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(movie.year))])])], 1), _vm._v(" "), _c('div', {
       staticClass: "extra content"
     }, [_c('span', {
       staticClass: "left floated"
@@ -12441,6 +12446,8 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_movie_index_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_movie_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_movie_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_movie_show_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_movie_show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_movie_show_vue__);
 
 
 
@@ -12449,7 +12456,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	mode: 'history',
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__views_movie_index_vue___default.a }]
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__views_movie_index_vue___default.a }, { path: '/movie/:id', component: __WEBPACK_IMPORTED_MODULE_3__views_movie_show_vue___default.a }]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
@@ -44792,6 +44799,185 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(58),
+  /* template */
+  __webpack_require__(57),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "C:\\xampp\\htdocs\\LaravelVueSemantic\\resources\\assets\\js\\views\\movie\\show.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-795f783f", Component.options)
+  } else {
+    hotAPI.reload("data-v-795f783f", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "ui container"
+  }, [_c('div', {
+    staticClass: "left floated"
+  }, [_c('router-link', {
+    attrs: {
+      "to": "/"
+    }
+  }, [_c('button', {
+    staticClass: "ui labeled icon button"
+  }, [_c('i', {
+    staticClass: "left chevron icon"
+  }), _vm._v("Back")])])], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('div', {
+    staticClass: "ui internally celled two column grid"
+  }, [_c('div', {
+    staticClass: "column"
+  }, [_c('div', {
+    staticClass: "ui grid"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "six wide column"
+  }, [_c('h3', {
+    staticClass: "ui center aligned block header "
+  }, [_vm._v(_vm._s(_vm.movie.title))]), _vm._v(" "), _c('h3', {
+    staticClass: "ui center aligned header"
+  }, [_vm._v(_vm._s(_vm.movie.genre))])])])]), _vm._v(" "), _c('div', {
+    staticClass: "column"
+  }, [_c('h4', {
+    staticClass: "ui header"
+  }, [_vm._v(_vm._s(_vm.movie.summary))])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "eight wide column"
+  }, [_c('img', {
+    staticClass: "ui top aligned medium image",
+    attrs: {
+      "src": "/images/movie/godfather_poster.jpg"
+    }
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-795f783f", module.exports)
+  }
+}
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			initializeURL: '',
+			movie: []
+
+		};
+	},
+	created: function created() {
+		this.getMovieDetails();
+	},
+
+	methods: {
+		getMovieDetails: function getMovieDetails(movieId) {
+			var _this = this;
+
+			this.initializeURL = '/movies/' + this.$route.params.id;
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["a" /* get */])(this.initializeURL).then(function (res) {
+				console.log(res);
+				__WEBPACK_IMPORTED_MODULE_1_vue___default.a.set(_this.$data, 'movie', res.data.movie);
+				/*this.form.logo=res.data.form.logo
+    this.form.cover=res.data.form.cover
+    console.log(this.form.cover + " " + this.form.logo)*/
+			});
+		}
+	}
+});
 
 /***/ })
 /******/ ]);

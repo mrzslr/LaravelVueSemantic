@@ -50,7 +50,9 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        
+        return Response::json([
+                'movie'=>$movie
+            ]);
     }
 
     /**
