@@ -7,13 +7,14 @@
 			<button class="ui labeled icon button"><i class="left chevron icon"></i>Back</button>
 			</router-link>
 		</div>
+		<div v-show="loading" class="ui active centered loader"></div>
 		<br />
 		<div class="ui internally celled two column grid">
 		<div class="column">
 			<div class="ui grid">
 				
 				<div class="eight wide column">
-					<img class="ui top aligned medium image" src="/images/movie/godfather_poster.jpg">
+					<img class="ui top aligned medium image" :src="`${movie.cover}`">
 					
 				</div>
 
@@ -43,9 +44,14 @@ import Vue from 'vue'
 		data(){
 			return {
 				initializeURL:'',
-				movie:[]
+				movie:[],
+				loading:false
+				
 				
 			}
+		},
+		mounted(){
+		console.log(this.$parent.name)	
 		},
 		created(){
 			this.getMovieDetails()
@@ -53,10 +59,12 @@ import Vue from 'vue'
 		methods:{
 			getMovieDetails(movieId){
 				this.initializeURL = `/movies/${this.$route.params.id}`
+				this.loading=true
 				get(this.initializeURL)
 					.then((res) => {
 						console.log(res)
 						Vue.set(this.$data, 'movie', res.data.movie)
+						this.loading=false
 						/*this.form.logo=res.data.form.logo
 						this.form.cover=res.data.form.cover
 						console.log(this.form.cover + " " + this.form.logo)*/

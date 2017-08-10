@@ -4,7 +4,7 @@
 
 		<div class="sixteen wide column" >
 			<div class="ui fluid icon input" >
-		  		<input type="text" placeholder="Search" dir="ltr">
+		  		<input type="text" placeholder="Search" dir="ltr" v-model="searchQuery">
 		  		<i class="search icon"></i>
 			</div>
 		</div>
@@ -15,7 +15,7 @@
 		  <a tabindex="2" class="item">Series</a>
 		</div>
 
-
+<div v-show="loading" class="ui active centered loader"></div>
 		<div class="ui four stackable cards">
 
 	    <div class="ui fluid card" v-for="(movie,index) in movies">
@@ -61,14 +61,17 @@ import { get,del } from '../../helpers/api'
 		data(){
 			return {
 				message:'Welcome to Movie Index',
-				movies:[]
+				movies:[],
+				searchQuery:'',
+				loading:false
 			}
 		},
 		created(){
-			this.fetchMovies()
+				this.fetchMovies()
 		},
 		mounted(){
-			console.log("mounted")
+
+			
 			$('.ui.fluid.three.item.menu .item').on('click', function(el) {
 		        $('.ui .item').removeClass('active');
 		        $(this).addClass('active');
@@ -92,9 +95,12 @@ import { get,del } from '../../helpers/api'
 		
 		methods:{
 			fetchMovies(){
+				this.loading=true
 				get('/movies')
 					.then((res) => {
+						console.log("fetch movies")
 						this.movies=res.data.movies
+						this.loading=false
 				})
 			},
 		},

@@ -11,6 +11,9 @@
     url('../fonts/vazir.ttf') format('truetype');
     /* Safari, Android, iOS */
 }
+[v-cloak] {
+  display: none;
+}
 /*
 html * {
     font-family: vazir;
