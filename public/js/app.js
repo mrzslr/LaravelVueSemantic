@@ -11183,7 +11183,9 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_api__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_api__ = __webpack_require__(6);
 //
 //
 //
@@ -11241,6 +11243,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -11283,12 +11286,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this = this;
 
 			this.loading = true;
-			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["a" /* get */])('/movies').then(function (res) {
+			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/movies').then(function (res) {
 				console.log("fetch movies");
-				_this.movies = res.data.movies;
+				// this.movies=res.data.movies
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this.$data, 'movies', res.data.movies);
 				_this.loading = false;
 			});
-		}
+		},
+		fetchSeries: function fetchSeries() {
+			var _this2 = this;
+
+			this.movies = [];
+			this.loading = true;
+			Object(__WEBPACK_IMPORTED_MODULE_1__helpers_api__["a" /* get */])('/movies').then(function (res) {
+				console.log("fetch series");
+				// this.movies=res.data.movies
+				__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(_this2.$data, 'movies', res.data.movies);
+				_this2.loading = false;
+			});
+		},
+		fetchInTheaters: function fetchInTheaters() {}
 	}
 });
 
@@ -12384,7 +12401,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('i', {
     staticClass: "search icon"
-  })])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "ui fluid three item menu"
+  }, [_c('a', {
+    staticClass: "item active",
+    attrs: {
+      "tabindex": "0"
+    }
+  }, [_vm._v("Top Rated Movies")]), _vm._v(" "), _c('a', {
+    staticClass: "item",
+    attrs: {
+      "tabindex": "1"
+    }
+  }, [_vm._v("In Theaters")]), _vm._v(" "), _c('a', {
+    staticClass: "item",
+    attrs: {
+      "tabindex": "2"
+    },
+    on: {
+      "click": function($event) {
+        _vm.fetchSeries()
+      }
+    }
+  }, [_vm._v("Series")])]), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -12397,7 +12436,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.movies), function(movie, index) {
     return _c('div', {
       staticClass: "ui fluid card"
-    }, [_vm._m(1, true), _vm._v(" "), _c('div', {
+    }, [_vm._m(0, true), _vm._v(" "), _c('div', {
       staticClass: "image"
     }, [_c('img', {
       staticClass: "ui medium image",
@@ -12429,25 +12468,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v("\n     \n      " + _vm._s(movie.genre) + "\n    ")])])])
   }))])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "ui fluid three item menu"
-  }, [_c('a', {
-    staticClass: "item active",
-    attrs: {
-      "tabindex": "0"
-    }
-  }, [_vm._v("Top Rated Movies")]), _vm._v(" "), _c('a', {
-    staticClass: "item",
-    attrs: {
-      "tabindex": "1"
-    }
-  }, [_vm._v("In Theaters")]), _vm._v(" "), _c('a', {
-    staticClass: "item",
-    attrs: {
-      "tabindex": "2"
-    }
-  }, [_vm._v("Series")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     staticClass: "ui red right corner label"
   }, [_c('i', {
@@ -15087,6 +15107,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+
 
 
 
@@ -15168,7 +15191,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ui center aligned block header "
   }, [_vm._v(_vm._s(_vm.movie.title))]), _vm._v(" "), _c('h3', {
     staticClass: "ui center aligned header"
-  }, [_vm._v(_vm._s(_vm.movie.genre))])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Genre : " + _vm._s(_vm.movie.genre))]), _vm._v(" "), _c('h3', {
+    staticClass: "ui center aligned header"
+  }, [_vm._v("Year : " + _vm._s(_vm.movie.year))]), _vm._v(" "), _c('h3', {
+    staticClass: "ui center aligned header"
+  }, [_vm._v("Rate : " + _vm._s(_vm.movie.rate))])])])]), _vm._v(" "), _c('div', {
     staticClass: "column"
   }, [_c('h4', {
     staticClass: "ui header"

@@ -15,3 +15,4 @@ Route::resource('movies','MovieController');
 Route::get('/{any}', function () {
     return view('app');
 })->where(['any' => '.*']);
+Route::get('movies/search','MovieController@search');

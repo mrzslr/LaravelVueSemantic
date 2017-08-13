@@ -42,12 +42,13 @@ class MovieController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Movie  $movie
-     * @return \Illuminate\Http\Response
-     */
+   public function search(){
+        // $search=$request->search;
+        // $movies=$this->movie->where('title','LIKE',"%$search%");
+        return Response::json([
+                'movies'=>'hello'
+            ]);
+   }
     public function show(Movie $movie)
     {
         return Response::json([

@@ -20,7 +20,9 @@
 
 				<div class="six wide column">
 					<h3 class="ui center aligned block header ">{{movie.title}}</h3>
-					<h3 class="ui center aligned header">{{movie.genre}}</h3>
+					<h3 class="ui center aligned header">Genre : {{movie.genre}}</h3>
+					<h3 class="ui center aligned header">Year : {{movie.year}}</h3>
+					<h3 class="ui center aligned header">Rate : {{movie.rate}}</h3>
 				</div>
 			</div>
 		</div>
@@ -38,6 +40,7 @@
 </template>
 
 <script type="text/javascript">
+
 import { get, post } from '../../helpers/api'
 import Vue from 'vue'
 	export default{

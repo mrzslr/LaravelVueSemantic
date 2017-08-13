@@ -12,7 +12,7 @@
 		<div class="ui fluid three item menu">
 		  <a tabindex="0" class="item active">Top Rated Movies</a>
 		  <a tabindex="1" class="item">In Theaters</a>
-		  <a tabindex="2" class="item">Series</a>
+		  <a tabindex="2" @click="fetchSeries()" class="item">Series</a>
 		</div>
 
 <div v-show="loading" class="ui active centered loader"></div>
@@ -56,6 +56,7 @@
 </template>
 
 <script type="text/javascript">
+import Vue from 'vue'
 import { get,del } from '../../helpers/api'
 	export default{
 		data(){
@@ -99,10 +100,27 @@ import { get,del } from '../../helpers/api'
 				get('/movies')
 					.then((res) => {
 						console.log("fetch movies")
-						this.movies=res.data.movies
+						// this.movies=res.data.movies
+						Vue.set(this.$data, 'movies', res.data.movies)
 						this.loading=false
 				})
 			},
+			fetchSeries(){
+				this.movies=[]
+				this.loading=true
+				get('/movies')
+					.then((res) => {
+						console.log("fetch series")
+						// this.movies=res.data.movies
+						Vue.set(this.$data, 'movies', res.data.movies)
+						this.loading=false
+				})
+				
+			},
+			fetchInTheaters(){
+
+			}
+			
 		},
 	}
 </script>
