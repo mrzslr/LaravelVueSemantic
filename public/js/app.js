@@ -15109,6 +15109,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -15155,7 +15167,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "ui container"
   }, [_c('div', {
-    staticClass: "left floated"
+    staticClass: "ui grid"
+  }, [_c('div', {
+    staticClass: "four column row"
+  }, [_c('div', {
+    staticClass: "left floated column"
   }, [_c('router-link', {
     attrs: {
       "to": "/"
@@ -15165,6 +15181,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "left chevron icon"
   }), _vm._v("Back")])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "right floated column"
+  }, [_c('router-link', {
+    attrs: {
+      "to": "/"
+    }
+  }, [_c('button', {
+    staticClass: "ui icon button"
+  }, [_c('i', {
+    staticClass: "bookmark icon"
+  })])]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": "/"
+    }
+  }, [_c('button', {
+    staticClass: "ui icon button"
+  }, [_c('i', {
+    staticClass: "share icon"
+  })])])], 1)])]), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",

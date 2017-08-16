@@ -1,11 +1,23 @@
 <template>
 	
 	<div class="ui container">
-		
-		<div class="left floated">
+		<div class="ui grid">
+		<div class="four column row">
+		<div class="left floated column">
 		<router-link :to="`/`">
 			<button class="ui labeled icon button"><i class="left chevron icon"></i>Back</button>
 			</router-link>
+		</div>
+
+		<div class="right floated column">
+		<router-link :to="`/`">
+			<button class="ui icon button"><i class="bookmark icon"></i></button>
+		</router-link>
+		<router-link :to="`/`">
+			<button class="ui icon button"><i class="share icon"></i></button>
+		</router-link>
+		</div>
+		</div>
 		</div>
 		<div v-show="loading" class="ui active centered loader"></div>
 		<br />
