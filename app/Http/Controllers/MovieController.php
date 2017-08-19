@@ -3,21 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Model\Movie;
+use App\Model\Watchlist;
 use Illuminate\Http\Request;
 use Response;
-use App\User;
+
 class MovieController extends Controller
 {
     private $movie;
+    private $watchlist;
 
-    public function __construct(Movie $movie){
-        $this->movie=$movie;
+    public function __construct(Movie $movie,Watchlist $watchlist)
+    {
+        $this->movie = $movie;
+        $this->watchlist=$watchlist;
     }
     public function index()
     {
-        $movies=$this->movie->all();
+        $movies = $this->movie->all();
         return Response::json([
-                'movies'=>$movies,
+            'movies' => $movies,
+        ]);
+    }
+
+    public function saveBookmark(Request $request,$id)
+    {
+
+        $wl=new Watchlist;
+        $wl->movie_id=$id;
+        $wl->save();
+
+            return Response::json([
+                'saved'=>'true'
             ]);
     }
 
@@ -28,7 +44,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -39,21 +55,22 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
-   public function search(){
+    public function search()
+    {
         // $search=$request->search;
         // $movies=$this->movie->where('title','LIKE',"%$search%");
         return Response::json([
-                'movies'=>'hello'
-            ]);
-   }
+            'movies' => 'hello',
+        ]);
+    }
     public function show(Movie $movie)
     {
         return Response::json([
-                'movie'=>$movie
-            ]);
+            'movie' => $movie,
+        ]);
     }
 
     /**
@@ -64,7 +81,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        
+
     }
 
     /**
@@ -89,7 +106,7 @@ class MovieController extends Controller
     {
         $movie->delete();
         return Response::json([
-                'deleted'=>true,
-            ]);
+            'deleted' => true,
+        ]);
     }
 }

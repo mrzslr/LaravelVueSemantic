@@ -10738,7 +10738,7 @@ module.exports = Component.exports
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = get;
-/* unused harmony export post */
+/* harmony export (immutable) */ __webpack_exports__["b"] = post;
 /* unused harmony export del */
 /* unused harmony export interceptors */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(7);
@@ -15120,7 +15120,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -15155,6 +15154,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.form.cover=res.data.form.cover
     console.log(this.form.cover + " " + this.form.logo)*/
 			});
+		},
+		saveBookmark: function saveBookmark() {
+
+			Object(__WEBPACK_IMPORTED_MODULE_0__helpers_api__["b" /* post */])('/movies/bookmark/' + this.$route.params.id).then(function (res) {
+				console.log(res);
+				if (res.data.saved) {
+					alert("Bookmarked!");
+				}
+			});
 		}
 	}
 });
@@ -15182,15 +15190,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "left chevron icon"
   }), _vm._v("Back")])])], 1), _vm._v(" "), _c('div', {
     staticClass: "right floated column"
-  }, [_c('router-link', {
-    attrs: {
-      "to": "/"
-    }
   }, [_c('button', {
-    staticClass: "ui icon button"
+    staticClass: "ui icon button",
+    on: {
+      "click": _vm.saveBookmark
+    }
   }, [_c('i', {
     staticClass: "bookmark icon"
-  })])]), _vm._v(" "), _c('router-link', {
+  })]), _vm._v(" "), _c('router-link', {
     attrs: {
       "to": "/"
     }

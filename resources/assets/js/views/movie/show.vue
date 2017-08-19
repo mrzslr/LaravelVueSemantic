@@ -10,9 +10,8 @@
 		</div>
 
 		<div class="right floated column">
-		<router-link :to="`/`">
-			<button class="ui icon button"><i class="bookmark icon"></i></button>
-		</router-link>
+		<button @click="saveBookmark" class="ui icon button"><i class="bookmark icon"></i></button>
+		
 		<router-link :to="`/`">
 			<button class="ui icon button"><i class="share icon"></i></button>
 		</router-link>
@@ -84,6 +83,17 @@ import Vue from 'vue'
 						this.form.cover=res.data.form.cover
 						console.log(this.form.cover + " " + this.form.logo)*/
 				})
+			},
+			saveBookmark(){
+
+				post(`/movies/bookmark/${this.$route.params.id}`)
+					.then((res) => {
+						console.log(res)
+						if(res.data.saved){
+							alert("Bookmarked!")
+						}
+				})
+
 			},
 		},
 	}
